@@ -1,0 +1,39 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Stack simples com S3 e Lambda
+
+Resources:
+
+  MeuBucketS3:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: meu-bucket-dio-simples
+
+  MinhaRoleLambda:
+    Type: AWS::IAM::Role
+    Properties:
+      RoleName: minha-role-lambda-simples
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service: lambda.amazonaws.com
+            Action: sts:AssumeRole
+      ManagedPolicyArns:
+        - arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole
+
+  MinhaFuncaoLambda:
+    Type: AWS::Lambda::Function
+    Properties:
+      FunctionName: minha-funcao-simples
+      Runtime: python3.9
+      Handler: index.lambda_handler
+      Role: !GetAtt MinhaRoleLambda.Arn
+      Code:
+        ZipFile: |
+          def lambda_handler(event, context):
+              print("Função Lambda executada com sucesso!")
+              return {
+                  'statusCode': 200,
+                  'body': 'Olá da Lambda!'
+              }
