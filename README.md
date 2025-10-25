@@ -56,3 +56,38 @@ Após a criação da stack, a função Lambda foi testada diretamente no console
   "body": "Olá da Lambda!"
 }
 
+```
+- A mensagem "Função Lambda executada com sucesso!" foi registrada nos logs do CloudWatch
+
+## 📁 Estrutura do Repositório
+
+desafio-cloudformation-2/
+├── README.md
+├── template.yaml
+├── images/
+│   ├── stack-criada.png
+│   ├── lambda-teste.png
+
+## 📸 Capturas de Tela
+As imagens da execução da stack e do teste da Lambda estão disponíveis na pasta /images.
+
+- stack-criada.png: visualização da stack no console
+
+- lambda-teste.png: resultado do teste da função Lambda
+
+## 📚 Aprendizados
+Durante este desafio, aprendi:
+
+- Como estruturar um template YAML para CloudFormation
+
+- A diferença entre recursos, permissões e código inline
+
+- Como testar funções Lambda diretamente no console
+
+- A importância da documentação clara para projetos técnicos
+
+## ✅ Conclusão
+Desafio concluído com sucesso! A prática reforçou minha compreensão sobre infraestrutura como código e me preparou para projetos mais avançados com AWS.
+
+🔗 Link do Projeto
+Este repositório está disponível publicamente em: https://github.com/carolinegrau/desafioDIO-cloudformation2
